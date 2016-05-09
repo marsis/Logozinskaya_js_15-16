@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function Human(){
+		this.name = 'Ivan';
+		this.age = 25;
+		this.sex = 'male';
+		this.height = 180;
+		this.weight = 80;
+	};
+
+	function Worker(){
+		this.work = 'Google';
+		this.salary =  5000;
+		this.toWork = function() {
+			alert('I am worker!');
+		}
+	};
+
+	function Student(){
+		this.study = 'university';
+		this.salary = 500;
+		this.toWatchSerials = function() {
+				alert('I am student!');
+		}
+	};
+	
+	var newHuman = new Human();
+	Worker.prototype = newHuman;
+	Student.prototype = newHuman;
+	var newWorker = new Worker();
+	var oldWorker = new Worker();
+	var newStudent = new Student();
+	var oldStudent = new Student();
+	//Worker.__proto__= Human;
+
+	//console.log(Human);
+	console.log('newWorker name: ' , newWorker.name);
+	console.log('oldWorker age: ' , oldWorker.age);
+	console.log('newStudent: ' , newStudent);
+	console.log('oldStudent weight: ' , oldStudent.weight);
+
+	</script>
+</body>
+</html>
